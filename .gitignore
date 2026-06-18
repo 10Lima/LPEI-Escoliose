@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments
+.venv/
+venv/
+env/
+.conda/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE/OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Secrets/local config
+.env
+*.pem
+*.key
+secrets.*
+credentials.*
+
+# Runtime outputs
+outputs/
+reports/
+*.log
+
+# Generated data not meant for Git
+processed_padding_512/
+processed_padding_256/
+processed_resized/
+processed_padding_512_roi80*/
+crops_original/
+crops_normalized/
+spine_masks_normalized/
+centerlines/
+
+# Candidate dumps
+*candidates*.csv
+*candidate_rows*.csv
+*oof_candidate_predictions*.csv
+
+# Models: .keras files are tracked by Git LFS via .gitattributes
+*.h5
+*.ckpt*
+
+# Local release assets: upload manually to GitHub Releases, do not commit
+release_assets/

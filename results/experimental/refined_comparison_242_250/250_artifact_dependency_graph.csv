@@ -1,0 +1,7 @@
+step,depends_on,regenerated_equivalent,status
+BASE186,selector186_best_target_rows.csv,base_direct from 244/245/246 case summaries,not_equivalent
+190 -> 191,selector125_oof_candidate_predictions.csv,245 mt_candidates.csv,not_equivalent
+193 -> 194,diagnostico192 + gate123_oof_candidate_predictions.csv,244 pt_candidates.csv,not_equivalent
+196 -> 197 -> 198,diagnostico195 + gate114 + tll159 + tll175,246 tll_candidates.csv,partial_not_equivalent
+200 -> 201,diagnostico199 + gate123_oof_candidate_predictions.csv,244 pt_candidates.csv,not_equivalent
+203 -> 204 -> 205,audit202 + prep203_candidate_rows.csv,247 severe_candidates.csv,not_equivalent

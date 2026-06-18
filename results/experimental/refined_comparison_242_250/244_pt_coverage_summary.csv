@@ -1,0 +1,3 @@
+source,centerline_subdir,centerline_count_seen,case_count_processed,expected_cases,covered_images,missing_images,candidate_count,min_candidates_per_image,mean_candidates_per_image,max_candidates_per_image,oracle_pt_le5_count,oracle_pt_le5_pct,oracle_pt_le10_count,oracle_pt_le10_pct,failure_count,valid_for_243,max_files
+train2000,unet_baseline_2000_padding_512_centerline_val_all_3192,3192,3192,3192,3192,0,3830400,1200,1200.0,1200,1532,47.995,2409,75.4699,0,1,0
+trainfull,unet_train_full_padding_512_centerline_val_all_3192,3192,3192,3192,3192,0,3830400,1200,1200.0,1200,1544,48.3709,2429,76.0965,0,1,0

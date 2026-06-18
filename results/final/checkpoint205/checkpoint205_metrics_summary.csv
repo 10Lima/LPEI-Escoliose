@@ -1,0 +1,3 @@
+stage,max_cobb_smape_article,pt_smape_article,mt_smape_article,tll_smape_article,agg3_smape_article,max_cobb_smape_old,pt_smape_old,mt_smape_old,tll_smape_old,agg3_smape_old,mae3,rmse3,within_5,within_10,within_15,failures_gt5,severe_gt8,case_count,regressions_target_gt5,regressions_image_gt1,regressions_image_gt3
+checkpoint201,8.0634,24.5901,8.6292,12.4393,12.8402,16.1267,49.1803,17.2583,24.8785,25.6804,3.6261,4.7658,82.4,99.2,99.8,176,25,1000,0,0,0
+checkpoint205,8.062,24.5901,8.6292,12.427,12.8357,16.1241,49.1803,17.2583,24.8541,25.6714,3.6247,4.7629,82.4,99.2,99.8,176,24,1000,0,0,0

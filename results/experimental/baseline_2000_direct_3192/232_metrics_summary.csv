@@ -1,0 +1,2 @@
+scenario,max_cobb_smape_article,pt_smape_article,mt_smape_article,tll_smape_article,agg3_smape_article,max_cobb_smape_old,pt_smape_old,mt_smape_old,tll_smape_old,agg3_smape_old,mae3,rmse3,within_5,within_10,within_15,failures_gt5,severe_gt8,case_count,regressions_target_gt5,regressions_image_gt1,regressions_image_gt3
+train_full_val_all_3192,9.1139,32.1627,10.9728,17.7316,17.1345,18.2278,64.3253,21.9456,35.4632,34.269,4.8443,7.104,65.5075,93.5464,97.619,1101,358,3192,0,0,0

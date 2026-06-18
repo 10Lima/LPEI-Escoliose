@@ -1,0 +1,16 @@
+metric,train2000,trainfull,delta_trainfull_minus_train2000
+max_cobb_smape_article,8.3902,8.4957,0.1055
+pt_smape_article,31.0149,31.4553,0.4404
+mt_smape_article,9.8407,9.9073,0.0666
+tll_smape_article,17.955,18.2135,0.2585
+agg3_smape_article,16.5162,16.7131,0.1969
+mae3,4.7172,4.7653,0.0481
+rmse3,7.1646,7.2134,0.0488
+within_5,69.4549,68.8283,-0.6266
+within_10,93.4211,93.2644,-0.1567
+within_15,97.4624,97.3371,-0.1253
+failures_gt5,975,995,20.0
+severe_gt8,310,310,0.0
+regressions_target_gt5,48,61,13.0
+regressions_image_gt1,126,125,-1.0
+regressions_image_gt3,3,1,-2.0

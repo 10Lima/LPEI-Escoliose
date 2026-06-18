@@ -1,0 +1,13 @@
+source,target,profile_id,count_non_gt,count_with_diag_base_gate
+train2000,PT,pt_r100_j8_g001_m01_b8,25912,704
+train2000,PT,pt_r25_j5_g001_m01_b8,5552,139
+train2000,PT,pt_r750_j20_g005_m01_b12,1549122,11112
+train2000,TL_L,tll_all_r25_j8_s0_b5,58978,21897
+train2000,TL_L,tll_new_r1200_j25_s0_b8,3807930,771102
+train2000,TL_L,tll_new_r500_j16_s0_b8,1552094,308184
+trainfull,PT,pt_r100_j8_g001_m01_b8,25284,1152
+trainfull,PT,pt_r25_j5_g001_m01_b8,5544,225
+trainfull,PT,pt_r750_j20_g005_m01_b12,1557752,11092
+trainfull,TL_L,tll_all_r25_j8_s0_b5,58564,21854
+trainfull,TL_L,tll_new_r1200_j25_s0_b8,3810372,776028
+trainfull,TL_L,tll_new_r500_j16_s0_b8,1556948,311988
