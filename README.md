@@ -127,9 +127,9 @@ Expected output includes:
 
 ```text
 Smoke check OK
-Subset5: 4000 imagens
-GT: 4000 linhas
-Checkpoint205 referencia:
+Subset5: 4000 images
+GT: 4000 rows
+Checkpoint205 reference:
   MAE3: 3.6247
 ```
 
@@ -139,4 +139,3 @@ Checkpoint205 referencia:
 - The code and models are not medical devices.
 - Predictions must not be used as autonomous clinical diagnoses.
 - The `train_full` results included under `results/experimental/` are direct-Cobb experimental summaries and should not be presented as a replacement for the refined checkpoint205 result.
-
