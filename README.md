@@ -56,6 +56,18 @@ processed/cleaned/cobb_test_gt_subset5.csv
 
 The full training dataset is not included. See [data/README.md](data/README.md) for the expected full dataset layout.
 
+## Package Contents
+
+| Path | Purpose |
+|---|---|
+| `raw/images/test/Spinal-AI2024-subset5/` | Included Spinal-AI2024 test images |
+| `processed/cleaned/` | Cobb ground-truth files for subset5 |
+| `models/` | U-Net checkpoint tracked with Git LFS |
+| `results/final/checkpoint205/` | Final reference checkpoint metrics and rows |
+| `results/experimental/` | Experimental summaries retained for context |
+| `scripts/` | Selected original scripts for pipeline traceability |
+| `run_eval.py` | Lightweight smoke-check command |
+
 ## Models
 
 The main model is:
@@ -139,3 +151,9 @@ Checkpoint205 reference:
 - The code and models are not medical devices.
 - Predictions must not be used as autonomous clinical diagnoses.
 - The `train_full` results included under `results/experimental/` are direct-Cobb experimental summaries and should not be presented as a replacement for the refined checkpoint205 result.
+
+## License and Citation
+
+The source code is released under the MIT License. Included data, model weights, and third-party materials may be subject to their own terms; see [DATA_NOTICE.md](DATA_NOTICE.md).
+
+Citation metadata is provided in [CITATION.cff](CITATION.cff).

@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+title: "LPEI Scoliosis Evaluation Pack"
+message: "If you use this repository for academic work, please cite it using the metadata below."
+type: software
+authors:
+  - family-names: "Lima"
+    given-names: "Daniel"
+repository-code: "https://github.com/10Lima/LPEI-Escoliose"
+url: "https://github.com/10Lima/LPEI-Escoliose"
+date-released: "2026-06-18"
+version: "1.0.0"
+license: "MIT"
+keywords:
+  - scoliosis
+  - Cobb angle
+  - medical imaging
+  - spine segmentation
+  - centerline extraction
+  - TensorFlow
+abstract: "Evaluation package for automatic scoliosis X-ray analysis on Spinal-AI2024, including spinal segmentation, centerline extraction, and Cobb angle estimation reference outputs."
+

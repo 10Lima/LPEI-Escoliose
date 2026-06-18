@@ -1,5 +1,5 @@
-tensorflow
-numpy
-Pillow
-matplotlib
-scipy
+tensorflow==2.16.1
+numpy==1.26.4
+Pillow==10.4.0
+matplotlib==3.9.2
+scipy==1.13.1
