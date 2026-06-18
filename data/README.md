@@ -1,30 +1,27 @@
-# Dados
+# Data
 
-Este staging inclui o subset de teste `Spinal-AI2024-subset5`.
-
-## Opcao recomendada para avaliacao
-
-Subset incluido:
+This evaluation pack includes the Spinal-AI2024 test subset:
 
 ```text
 raw/images/test/Spinal-AI2024-subset5/
 ```
 
-No projeto local original, este subset tem:
+Local package contents:
 
-- 4000 imagens;
-- cerca de 86.91 MB.
+- 4000 test images;
+- approximately 86.91 MB;
+- Cobb ground truth in `processed/cleaned/`.
 
-Ground truth incluido:
+Included ground-truth files:
 
 ```text
 processed/cleaned/Cobb_spinal-AI2024-test_gt.txt
 processed/cleaned/cobb_test_gt_subset5.csv
 ```
 
-## Dataset completo
+## Full Dataset Layout
 
-Para reproduzir treino e preprocessamento completo, e necessaria a estrutura original:
+To reproduce preprocessing and training from scratch, the full original dataset is expected in this layout:
 
 ```text
 Spinal-AI2024-subset1/
@@ -38,4 +35,5 @@ Cobb_spinal-AI2024-train_gt.txt
 Cobb_spinal-AI2024-test_gt.txt
 ```
 
-Por defeito, os scripts procuram estes dados na raiz definida por `SPINAL_AI_DATASET_DIR`.
+By default, the original scripts resolve the dataset root from `SPINAL_AI_DATASET_DIR`. If it is not set, they use the repository root.
+

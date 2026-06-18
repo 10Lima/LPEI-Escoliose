@@ -1,110 +1,142 @@
-# LPEI-Escoliose
+# LPEI Scoliosis Evaluation Pack
 
-Pacote local de staging para a versao limpa do projeto de Laboratorio de Projeto em Engenharia Informatica sobre analise automatica de escoliose em radiografias.
+Clean evaluation repository for the LPEI scoliosis project. The project estimates Cobb angles from scoliosis X-rays using spinal segmentation, centerline extraction, geometric Cobb estimation, and a refined checkpoint-based selection pipeline.
 
-Este staging ainda nao e o repositorio final. Foi criado para selecionar e validar os ficheiros antes de qualquer commit ou push.
+This repository is intended for academic assessment and reproducibility of the final evaluation package.
 
-## Objetivo
+## Overview
 
-O projeto estima automaticamente os angulos de Cobb PT, MT e TL/L a partir de radiografias do dataset Spinal-AI2024, usando:
+The implemented pipeline uses the Spinal-AI2024 dataset and includes:
 
-- preprocessamento com padding para 512x512;
-- segmentacao da coluna com U-Net em TensorFlow/Keras;
-- extracao de centerline;
-- calculo geometrico dos angulos de Cobb;
-- pipeline refinada com candidatos, guards e checkpoints.
+- preprocessing with padding to `512x512`;
+- spinal segmentation with a TensorFlow/Keras U-Net;
+- mask post-processing and centerline extraction;
+- geometric Cobb angle estimation for PT, MT, and TL/L;
+- refined candidate selection, guards, and checkpoint promotion;
+- stored reference metrics for the selected final checkpoint.
 
-## Resultado de referencia
+## Reference Result
 
-O checkpoint seguro atual e `checkpoint205_checkpoint201_sf204_v1`.
+The current safe reference checkpoint is:
 
-Metricas em 1000 casos:
+```text
+checkpoint205_checkpoint201_sf204_v1
+```
 
-- MAE3: `3.6247`
-- RMSE3: `4.7629`
-- erro <= 5 graus: `82.4%`
-- falhas > 5 graus: `176`
-- falhas severas > 8 graus: `24`
+Metrics on the validated 1000-case evaluation window:
 
-Os ficheiros deste resultado estao em:
+| Metric | Value |
+|---|---:|
+| MAE3 | 3.6247 |
+| RMSE3 | 4.7629 |
+| <= 5 degrees | 82.4% |
+| failures > 5 degrees | 176 |
+| severe failures > 8 degrees | 24 |
+
+Reference files are stored in:
 
 ```text
 results/final/checkpoint205/
 ```
 
-## Modelos
+## Included Data
 
-O checkpoint principal esperado e:
-
-```text
-models/unet_baseline_2000_padding_512.keras
-```
-
-No repositorio final, ficheiros `.keras` devem ser obtidos por Git LFS:
-
-```powershell
-git lfs install
-git lfs pull
-```
-
-Fallback recomendado: descarregar o zip de modelos da GitHub Release e extrair na raiz do repositorio.
-
-Nome previsto do asset:
-
-```text
-lpei-escoliose-models-v1.zip
-```
-
-Se um ficheiro `.keras` abrir como texto e comecar por `version https://git-lfs.github.com/spec/v1`, entao ainda e apenas um pointer LFS.
-
-## Estrutura
-
-```text
-data/                 instrucoes para obter/preparar dados
-raw/                  subset de avaliacao, se for autorizado incluir
-models/               instrucoes para obter checkpoints
-scripts/              scripts selecionados, ainda com nomes originais
-results/              resultados finais pequenos e summaries experimentais
-assets/               figuras futuras
-archive/              historico pequeno, se necessario
-```
-
-## Smoke test
-
-Este staging inclui um smoke check inicial:
-
-```powershell
-python run_eval.py smoke --num-images 8
-```
-
-Este comando valida:
-
-- existencia das 4000 imagens do subset5;
-- existencia das 4000 linhas de ground truth Cobb;
-- correspondencia entre nomes de imagem e GT;
-- presenca das metricas finais do checkpoint205.
-
-## Estado dos dados
-
-Nesta versao de staging, o dataset `subset5` ja foi copiado para:
+This evaluation pack includes the Spinal-AI2024 test subset:
 
 ```text
 raw/images/test/Spinal-AI2024-subset5/
 ```
 
-Tambem foi copiado o ground truth de teste:
+It contains 4000 images and the corresponding Cobb ground truth:
 
 ```text
 processed/cleaned/Cobb_spinal-AI2024-test_gt.txt
 processed/cleaned/cobb_test_gt_subset5.csv
 ```
 
-O checkpoint principal `.keras` foi copiado para `models/`.
+The full training dataset is not included. See [data/README.md](data/README.md) for the expected full dataset layout.
 
-Decisao pendente:
+## Models
 
-- publicar modelos via GitHub Release e/ou Git LFS no repositorio final.
+The main model is:
 
-## Aviso
+```text
+models/unet_baseline_2000_padding_512.keras
+```
 
-Este projeto e academico e nao e um dispositivo medico. As estimativas nao devem ser usadas como diagnostico clinico autonomo.
+Large `.keras` files are tracked with Git LFS:
+
+```powershell
+git lfs install
+git lfs pull
+```
+
+Fallback: download the model zip from the GitHub Release and extract it into the repository root.
+
+Planned release asset:
+
+```text
+lpei-escoliose-models-v1.zip
+```
+
+If a `.keras` file opens as text and starts with `version https://git-lfs.github.com/spec/v1`, it is still only a Git LFS pointer.
+
+## Repository Layout
+
+```text
+data/         dataset notes and expected full-data layout
+models/       model notes and checksums
+processed/    cleaned metadata and test ground truth
+raw/          included Spinal-AI2024 subset5 images
+results/      final and experimental reference summaries
+scripts/      selected original pipeline scripts
+run_eval.py   smoke-check command wrapper
+```
+
+## Setup
+
+Use Python 3.10 or 3.11 if possible.
+
+```powershell
+git clone https://github.com/10Lima/LPEI-Escoliose.git
+cd LPEI-Escoliose
+git lfs pull
+
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+## Smoke Test
+
+Run:
+
+```powershell
+python run_eval.py smoke --num-images 8
+```
+
+This validates:
+
+- the 4000 subset5 images;
+- the 4000 Cobb ground-truth rows;
+- image-to-ground-truth filename matching;
+- the stored checkpoint205 reference metrics.
+
+Expected output includes:
+
+```text
+Smoke check OK
+Subset5: 4000 imagens
+GT: 4000 linhas
+Checkpoint205 referencia:
+  MAE3: 3.6247
+```
+
+## Important Notes
+
+- This repository is for academic evaluation and research reproducibility.
+- The code and models are not medical devices.
+- Predictions must not be used as autonomous clinical diagnoses.
+- The `train_full` results included under `results/experimental/` are direct-Cobb experimental summaries and should not be presented as a replacement for the refined checkpoint205 result.
+

@@ -1,21 +1,22 @@
 # Data Notice
 
-Este repositorio e um pacote academico de avaliacao para o projeto LPEI-Escoliose.
+This repository is an academic evaluation package for the LPEI scoliosis project.
 
-Os dados e modelos associados devem ser usados apenas para reproducao, avaliacao academica e investigacao. Qualquer reutilizacao, redistribuicao, publicacao ou uso clinico deve respeitar:
+The included data and model files are provided for reproducibility, academic assessment, and research. Any reuse, redistribution, publication, or clinical use must respect:
 
-- a licenca e termos do dataset Spinal-AI2024;
-- as regras institucionais aplicaveis;
-- as restricoes de privacidade e dados medicos.
+- the license and terms of the original Spinal-AI2024 dataset;
+- applicable institutional rules;
+- medical-data privacy and governance requirements.
 
-O codigo e os modelos nao sao dispositivos medicos. As predicoes dos angulos de Cobb servem para analise academica e nao substituem avaliacao clinica.
+The code and models are not medical devices. Cobb angle predictions are provided for academic analysis and must not replace clinical evaluation.
 
-## Dados incluidos
+## Included Data
 
-Este staging inclui apenas o subset de teste:
+This repository includes only the Spinal-AI2024 test subset:
 
 ```text
 raw/images/test/Spinal-AI2024-subset5/
 ```
 
-O dataset completo de treino deve ficar externo ou ser descarregado segundo as instrucoes oficiais.
+The full training dataset is not included and should be obtained from the official source when full reproduction is required.
+
